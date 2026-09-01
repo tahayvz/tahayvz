@@ -25,7 +25,7 @@ latency, memory, failure modes — not just what compiles.
 - **Defense in depth** — JWT + BCrypt, gateway-level RBAC, TOTP 2FA, brute-force lockout, IP rate limiting, audit logging, Resilience4j circuit breakers
 - **Full observability** — Prometheus + Grafana, Loki, Zipkin tracing
 - **CI/CD to a VPS** — Docker Compose, GHCR auto-deploy, nginx with TLS 1.3
-- **Next.js 16 / React 19 / TypeScript** frontend
+- **Next.js / React / TypeScript** frontend
 
 Source is private (it runs a live business), but I'm glad to walk through the architecture.
 
