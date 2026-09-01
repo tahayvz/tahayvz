@@ -32,10 +32,11 @@ latency, memory, failure modes — not just what compiles.
 Source is private (it runs a live business), but I'm glad to walk through the architecture.
 
 #### [classified-lifecycle-api](https://github.com/tahayvz/classified-lifecycle-api)
-Hexagonal architecture (ports & adapters) keeping the listing lifecycle state machine
-independent of Spring, JPA and HTTP — with status-history tracking, RFC 7807 error
-handling, and tested domain and use-case layers.
-`Java` `Spring Boot` `JPA` `Docker` `OpenAPI` `JUnit 5`
+Hexagonal architecture (ports & adapters) keeping a listing lifecycle state machine
+independent of Spring, JPA and HTTP — and proving it: **ArchUnit rules fail the build**
+when a dependency points the wrong way. 112 unit tests plus end-to-end integration tests
+on a real PostgreSQL container, behind a coverage gate rather than a badge.
+`Java 17` `Spring Boot 3.5` `JPA` `Testcontainers` `ArchUnit` `JaCoCo` `Docker` `GitHub Actions`
 
 ---
 
