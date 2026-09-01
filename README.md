@@ -5,10 +5,8 @@
 I build enterprise backend systems: scalable REST APIs, Spring Boot services, and
 event-driven architectures. 4+ years in the Java & Spring ecosystem, 6+ years in software.
 
-At **ebebek** I own and lead the **Supplier Portal** — the platform where supplier orders
-arrive from SAP, suppliers place reservations, and delivery waybills are verified before
-goods reach the warehouse. I lead a team of two developers and an analyst, run code reviews,
-and resolve production issues.
+I work as a senior engineer at **ebebek**, on enterprise e-commerce backend systems —
+leading a small team, running code reviews, and owning services in production.
 
 I started out writing C/C++ drivers for LCD/TFT panels and programming ARM microcontrollers.
 That background still shapes how I work: I care about what actually runs in production —
@@ -45,7 +43,7 @@ on a real PostgreSQL container, behind a coverage gate rather than a badge.
 - **Domain-first architecture** — business rules stay independent of frameworks, so they can be tested without HTTP or a database
 - **Event-driven where it earns its place** — Kafka with retry and DLQ, not events for their own sake
 - **Tests as design pressure** — fast unit tests on pure domain logic, Testcontainers at the integration boundary
-- **Measured performance work** — e.g. a ~5× speedup on supplier-report queries at ebebek
+- **Measured performance work** — query and endpoint optimisation judged by before/after numbers, not by guesswork
 - **End-to-end ownership** — I operate what I build, including deployment and monitoring
 
 ---
