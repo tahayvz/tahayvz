@@ -29,6 +29,19 @@ latency, memory, failure modes — not just what compiles.
 
 Source is private (it runs a live business), but I'm glad to walk through the architecture.
 
+#### [kervan](https://github.com/tahayvz/kervan) — event-driven commerce platform
+Spring Boot microservices with a **Transactional Outbox**: an order and its event are
+written in one database transaction, and a separate publisher moves the event to Kafka.
+Writing to a database and publishing to a broker are two systems with no shared
+transaction — a crash between them either loses the event or invents one, and no retry
+can tell you which happened. Putting the event in the same transaction removes the
+question.
+
+Hexagonal architecture, **6 ADRs** recording why each choice was made, polyglot
+persistence (MongoDB for catalog, PostgreSQL for orders), and 78 tests — the end-to-end
+one runs against real PostgreSQL and Kafka containers.
+`Java 21` `Spring Boot` `Kafka` `PostgreSQL` `MongoDB` `Flyway` `Testcontainers` `Docker` `GitHub Actions`
+
 #### [classified-lifecycle-api](https://github.com/tahayvz/classified-lifecycle-api)
 Hexagonal architecture (ports & adapters) keeping a listing lifecycle state machine
 independent of Spring, JPA and HTTP — and proving it: **ArchUnit rules fail the build**
