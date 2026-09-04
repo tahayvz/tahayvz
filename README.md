@@ -42,6 +42,15 @@ persistence (MongoDB for catalog, PostgreSQL for orders), and 78 tests — the e
 one runs against real PostgreSQL and Kafka containers.
 `Java 21` `Spring Boot` `Kafka` `PostgreSQL` `MongoDB` `Flyway` `Testcontainers` `Docker` `GitHub Actions`
 
+#### [spring-reactive-streaming](https://github.com/tahayvz/spring-reactive-streaming)
+WebFlux backpressure, stream composition and R2DBC, built around one question: virtual
+threads made blocking cheap, so what is reactive still for? The answer is **backpressure**
+— a fast producer being told to slow down, which virtual threads have no way to signal.
+The three overflow strategies are measured, not asserted: `BUFFER` fails loudly at
+capacity, `DROP_LATEST` keeps the oldest values, `DROP_OLDEST` keeps the newest. Includes
+an honest section on when *not* to reach for reactive.
+`Java 21` `Spring WebFlux` `Project Reactor` `R2DBC` `Testcontainers`
+
 #### [java-concurrency-benchmarks](https://github.com/tahayvz/java-concurrency-benchmarks)
 Virtual threads, platform pools and parallel streams measured with JMH against the same
 workload. Two findings the usual summary gets wrong: on CPU-bound work virtual threads
