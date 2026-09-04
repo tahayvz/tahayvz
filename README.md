@@ -42,6 +42,15 @@ persistence (MongoDB for catalog, PostgreSQL for orders), and 78 tests — the e
 one runs against real PostgreSQL and Kafka containers.
 `Java 21` `Spring Boot` `Kafka` `PostgreSQL` `MongoDB` `Flyway` `Testcontainers` `Docker` `GitHub Actions`
 
+#### [java-concurrency-benchmarks](https://github.com/tahayvz/java-concurrency-benchmarks)
+Virtual threads, platform pools and parallel streams measured with JMH against the same
+workload. Two findings the usual summary gets wrong: on CPU-bound work virtual threads
+give **no speedup at all** — identical to a fixed pool, because there is no blocking to
+unmount from; and a `synchronized` block around a wait costs **7.7× on 14 cores, 24× on
+4** by pinning the carrier thread. Measured, reproduced in CI, and the arithmetic matches
+the mechanism.
+`Java 21` `Virtual Threads` `JMH` `JUnit 5`
+
 #### [classified-lifecycle-api](https://github.com/tahayvz/classified-lifecycle-api)
 Hexagonal architecture (ports & adapters) keeping a listing lifecycle state machine
 independent of Spring, JPA and HTTP — and proving it: **ArchUnit rules fail the build**
