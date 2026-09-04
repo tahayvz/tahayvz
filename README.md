@@ -3,7 +3,7 @@
 **Senior Software Engineer · Java & Spring** — İstanbul, Türkiye
 
 I build enterprise backend systems: scalable REST APIs, Spring Boot services, and
-event-driven architectures. 4+ years in the Java & Spring ecosystem, 6+ years in software.
+event-driven architectures. 5+ years in the Java & Spring ecosystem, 7+ years in software.
 
 I work as a senior engineer at **ebebek**, on enterprise e-commerce backend systems —
 leading a small team, running code reviews, and owning services in production.
