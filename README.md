@@ -42,6 +42,15 @@ persistence (MongoDB for catalog, PostgreSQL for orders), and 78 tests — the e
 one runs against real PostgreSQL and Kafka containers.
 `Java 21` `Spring Boot` `Kafka` `PostgreSQL` `MongoDB` `Flyway` `Testcontainers` `Docker` `GitHub Actions`
 
+#### [anadolu-flight-system](https://github.com/tahayvz/anadolu-flight-system)
+Four services behind a gateway — booking, flight operations and external feed integration
+— coordinated by a **Saga orchestrator** with a transactional outbox, Redis-backed saga
+state, circuit breakers and a dead-letter queue. Helm charts included. The booking rules
+were extracted out of the Spring service into a plain class with an injected `Clock`, so
+"is a 12-year-old an adult?" is answered in 80 ms instead of a 40-second context boot.
+The airline is fictional.
+`Java 17` `Spring Cloud Gateway` `Kafka` `Redis` `Saga` `Testcontainers` `Helm`
+
 #### [spring-reactive-streaming](https://github.com/tahayvz/spring-reactive-streaming)
 WebFlux backpressure, stream composition and R2DBC, built around one question: virtual
 threads made blocking cheap, so what is reactive still for? The answer is **backpressure**
