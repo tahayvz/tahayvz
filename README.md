@@ -51,6 +51,17 @@ were extracted out of the Spring service into a plain class with an injected `Cl
 The airline is fictional.
 `Java 17` `Spring Cloud Gateway` `Kafka` `Redis` `Saga` `Testcontainers` `Helm`
 
+#### [anadolu-flight-web](https://github.com/tahayvz/anadolu-flight-web)
+The React client for the platform above, and the part I find more interesting than the
+booking forms: an **operations panel for distributed-system failures**. It reads the
+backend's saga state — which step a booking is stuck on, what has been compensated — and
+lets an operator retry a saga or reprocess a message sitting in the dead-letter queue.
+Live flight status runs over a native `WebSocket` with hand-written STOMP frames rather
+than a 50 kB client library. No `any` in the codebase, including `catch` blocks: the
+error narrowing lives in one tested helper, covering the case that actually breaks — a
+network failure with no response object at all.
+`React 19` `TypeScript` `Vite` `Zustand` `Tailwind` `STOMP` `Vitest`
+
 #### [spring-reactive-streaming](https://github.com/tahayvz/spring-reactive-streaming)
 WebFlux backpressure, stream composition and R2DBC, built around one question: virtual
 threads made blocking cheap, so what is reactive still for? The answer is **backpressure**
@@ -110,7 +121,7 @@ B.Sc. Electrical & Electronics Engineering — Marmara University (English-mediu
 
 **Observability** Prometheus · Grafana · Loki · Zipkin
 
-**DevOps & testing** Docker · Docker Compose · CI/CD · nginx · Maven · Git · JUnit 5 · Testcontainers
+**DevOps & testing** Docker · Docker Compose · CI/CD · nginx · Maven · Git · JUnit 5 · Testcontainers · Vitest
 
 **Frontend** React · Next.js · Angular
 
