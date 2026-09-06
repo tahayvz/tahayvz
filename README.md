@@ -140,8 +140,6 @@ B.Sc. Electrical & Electronics Engineering — Marmara University (English-mediu
 
 **Frontend** React · Next.js · Angular
 
-**Integrations** SAP Cloud (REST)
-
 ---
 
 ### Contact
