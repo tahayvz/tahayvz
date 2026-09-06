@@ -71,6 +71,21 @@ capacity, `DROP_LATEST` keeps the oldest values, `DROP_OLDEST` keeps the newest.
 an honest section on when *not* to reach for reactive.
 `Java 21` `Spring WebFlux` `Project Reactor` `R2DBC` `Testcontainers`
 
+#### [kafka-vs-rabbitmq](https://github.com/tahayvz/kafka-vs-rabbitmq)
+"Kafka for streaming, RabbitMQ for tasks" is true enough to be useless when you are
+actually choosing. The same order events go through both brokers so that anything which
+differs is the broker, and four differences are **tested rather than claimed**: a Kafka
+group created after the fact still reads every message while RabbitMQ's second reader
+finds an empty queue; a queue bound to `order.*.created` never receives the "paid" event
+because the broker filtered it, while Kafka delivers everything and the application
+discards; RabbitMQ splits a queue across unlimited consumers, Kafka stops at the
+partition count and gives per-key ordering in return; RabbitMQ moves rejected messages
+itself, Kafka has no such concept and Spring Kafka builds it.
+
+The ordering test is on its second attempt — the first still passed after the partition
+key was removed, because the sticky partitioner had grouped the records anyway.
+`Java 21` `Spring Boot` `Kafka` `RabbitMQ` `Testcontainers`
+
 #### [java-concurrency-benchmarks](https://github.com/tahayvz/java-concurrency-benchmarks)
 Virtual threads, platform pools and parallel streams measured with JMH against the same
 workload. Two findings the usual summary gets wrong: on CPU-bound work virtual threads
@@ -117,7 +132,7 @@ B.Sc. Electrical & Electronics Engineering — Marmara University (English-mediu
 
 **Backend** Spring Boot · Spring MVC · Spring Cloud Gateway · Spring Data JPA · Spring Security · Hibernate · REST · OpenAPI · Resilience4j
 
-**Data & messaging** PostgreSQL · MS SQL Server · Oracle · MySQL · Elasticsearch · Apache Kafka · Caffeine
+**Data & messaging** PostgreSQL · MS SQL Server · Oracle · MySQL · Elasticsearch · Apache Kafka · RabbitMQ · Caffeine
 
 **Observability** Prometheus · Grafana · Loki · Zipkin
 
